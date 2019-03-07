@@ -68,7 +68,7 @@ public class ElevensBoard extends Board {
     @Override
     public boolean anotherPlayIsPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-        List<Integer> selectedCards = new List<Integer>;
+        List<Integer> selectedCards = new ArrayList<Integer>();
         for(int i = 0; i < size()-1; i++){
             for(int j = i+1; j<size();j++){
                 selectedCards.add(i);
