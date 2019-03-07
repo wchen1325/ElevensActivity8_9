@@ -68,7 +68,29 @@ public class ElevensBoard extends Board {
     @Override
     public boolean anotherPlayIsPossible() {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 9 *** */
-        return true;
+        List<Integer> selectedCards = new List<Integer>;
+        for(int i = 0; i < size()-1; i++){
+            for(int j = i+1; j<size();j++){
+                selectedCards.add(i);
+                selectedCards.add(j);
+                if(isLegal(selectedCards)){
+                    return true;
+                }
+                selectedCards.clear();
+            }
+        }
+        for(int i = 0; i < size()-2; i++){
+            for(int j = i+1; j<size()-1;j++){
+                selectedCards.add(i);
+                selectedCards.add(j);
+                selectedCards.add(j+1);
+                if(isLegal(selectedCards)){
+                    return true;
+                }
+                selectedCards.clear();
+            }
+        }
+        return false;
     }
 
     /**
